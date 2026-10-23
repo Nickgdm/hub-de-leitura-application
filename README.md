@@ -1,244 +1,61 @@
-# 📚 Hub de Leitura - Sistema de Biblioteca para QA
+# Hub de Leitura — Aplicação de Apoio para QA
 
-**Sistema educacional completo para aprendizado e prática de Quality Assurance (QA)**
+Aplicação educacional de gestão de biblioteca usada como ambiente de prática para atividades de Quality Assurance. O sistema oferece funcionalidades de aplicação e API que podem servir de alvo para diferentes tipos de teste.
 
-![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)
-![Express](https://img.shields.io/badge/Express-4.18+-blue.svg)
-![SQLite](https://img.shields.io/badge/SQLite-3+-lightgrey.svg)
-![JWT](https://img.shields.io/badge/JWT-Auth-orange.svg)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple.svg)
-![License](https://img.shields.io/badge/License-Educational-yellow.svg)
+## Objetivos
+- Disponibilizar um sistema de exemplo para praticar testes de software.
+- Exercitar cenários funcionais e de integração.
+- Usar a aplicação como alvo para projetos de automação relacionados.
 
-## 🎯 Objetivo
+## Tecnologias
+Conforme indicado pela configuração e documentação do repositório: Node.js, Express, SQLite, JWT, Bootstrap e JavaScript. Confira os arquivos de dependências para as versões efetivamente instaladas.
 
-O **Hub de Leitura** é um sistema de gestão de biblioteca desenvolvido especificamente para **ensinar e praticar Quality Assurance**. Cada funcionalidade representa cenários reais que profissionais de QA encontram no dia a dia.
+## Pré-requisitos
+- Node.js 18 ou versão compatível com as dependências.
+- npm.
+- Banco de dados e variáveis de ambiente configurados conforme a documentação e arquivos do projeto.
 
-### 🎓 Para Estudantes de QA
-
-- ✅ **Aprenda testando** - Sistema real com cenários complexos
-- ✅ **API REST completa** - Todos os tipos de endpoint
-- ✅ **Diferentes perfis** - Usuário comum vs Administrador
-- ✅ **Autenticação JWT** - Sistema de login profissional
-- ✅ **Cenários de erro** - Como sistemas falham na prática
-- ✅ **Documentação Swagger** - API bem documentada
-- ✅ **Interface moderna** - Frontend para testes E2E
-
-## 🚀 Funcionalidades
-
-### 👤 **Gestão de Usuários**
-
-- Registro e login de usuários
-- Autenticação JWT com expiração
-- Perfis diferenciados (Usuário/Admin)
-- Atualização de perfil
-
-### 📖 **Catálogo de Livros**
-
-- Listagem com filtros e busca
-- CRUD completo (Admin)
-- Controle de estoque
-- Upload de capas
-- Categorização
-
-### 📝 **Reservas**
-
-- Reserva de livros disponíveis
-- Controle de prazos
-- Gestão de retiradas e devoluções
-- Histórico completo
-- Alertas de atraso
-
-### 🛠️ **Painel Administrativo**
-
-- Dashboard com estatísticas
-- Gestão de todas as reservas
-- Controle de usuários
-- Relatórios e exportações
-- Logs do sistema
-
-## 🛠️ Tecnologias
-
-### Backend
-
-- **Node.js** - Runtime JavaScript
-- **Express.js** - Framework web
-- **SQLite** - Banco de dados leve
-- **JWT** - Autenticação
-- **Bcrypt** - Criptografia de senhas
-- **Joi** - Validação de dados
-- **Swagger** - Documentação da API
-
-### Frontend
-
-- **HTML5/CSS3** - Estrutura e estilo
-- **Bootstrap 5** - Framework CSS
-- **JavaScript ES6+** - Interatividade
-- **Font Awesome** - Ícones
-- **Chart.js** - Gráficos (futuro)
-
-## ⚡ Instalação Rápida
-
-### Pré-requisitos
-
-- Node.js 18+ instalado
-- Git instalado
-- Editor de código (Visual Studio Code recomendado)
-
-### 1. Clone o Repositório e entre na pasta
-
-```bash
-git clone https://github.com/EBAC-QE/hub-de-leitura-integrado.git
-cd hub-de-leitura-integrado
-```
-
-### 2. Instale as Dependências
-
+## Instalação e execução
+1. Clone o repositório e entre na pasta.
+2. Instale as dependências:
 ```bash
 npm install
 ```
-
-### 3. Inicie o Servidor
-
+3. Confira os scripts disponíveis:
 ```bash
-npm start
+npm run
+```
+4. Execute o script de inicialização definido em `package.json` e siga as configurações documentadas em `README.md` original ou nos arquivos de configuração. Não execute testes contra ambientes que você não controla ou não tem autorização para usar.
+
+## Estrutura do projeto
+```text
+teste-cy-base/
+├── .github/
+├── config/
+├── data/
+├── database/
+├── public/
+├── scripts/
+├── src/
+├── package.json
+└── README.md
 ```
 
-### 4. Acesse o Sistema
+## Desafios práticos
+Entender a arquitetura da aplicação, configurar o banco e a autenticação e preparar dados e cenários adequados para validar os fluxos disponíveis.
 
-- **Sistema:** http://localhost:3000
-- **API Docs:** http://localhost:3000/api-docs
-- **Admin:** http://localhost:3000/admin-dashboard.html
+## Boas práticas adotadas
+- Separação de código, dados, scripts e configuração.
+- Organização do projeto em diretórios por responsabilidade.
+- Uso do sistema como ambiente de prática para testes reproduzíveis.
 
-## 🔑 Credenciais de Teste
+## 📚 Aprendizados
+O projeto oferece uma base para compreender como uma aplicação web, uma API, autenticação e persistência de dados se relacionam. Também permite praticar a preparação de ambiente e a identificação de cenários relevantes para automação de qualidade.
 
-### Administrador
-
-- **Email:** admin@biblioteca.com
-- **Senha:** admin123
-- **Permissões:** Acesso total ao sistema
-
-### Usuário Comum
-
-- **Email:** usuario@teste.com
-- **Senha:** user123
-- **Permissões:** Reservas e consultas
-
-## 🧪 Testando a API
-
-### Com cURL
-
-```bash
-# Login
-curl -X POST http://localhost:3000/api/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@biblioteca.com","password":"admin123"}'
-
-# Listar livros (com token)
-curl -X GET http://localhost:3000/api/books \
-  -H "Authorization: Bearer SEU_TOKEN_AQUI"
-```
-
-### Com Postman/Insomnia
-
-1. Importe a coleção do Swagger: http://localhost:3000/api-docs
-2. Configure o token JWT no cabeçalho Authorization
-3. Teste todos os endpoints disponíveis
-
-## 🤝 Contribuindo
-
-### Para Instrutores
-
-1. Fork o repositório
-2. Crie cenários de teste adicionais
-3. Adicione novos endpoints para prática
-4. Documente bugs intencionais para os alunos encontrarem
-5. Envie um Pull Request
-
-### Para Alunos
-
-1. Reporte bugs encontrados (é parte do aprendizado!)
-2. Sugira melhorias na documentação
-3. Compartilhe casos de teste interessantes
-4. Contribua com exemplos de automação
-
-
-### Resetar Banco de Dados
-
-```bash
-# Pare o servidor "CTRL + C" e delete o arquivo do banco
-rm database/biblioteca.db
-ou apague manualmente entrando na pasta.
-# Rode o comando para recriar o banco
-npm run db
-# Reinicie o servidor para recriar as tabelas
-npm start
-```
-
-## 🐛 Problemas Comuns
-
-### Erro "Port 3000 already in use"
-
-```bash
-# Encontrar processo usando a porta
-lsof -ti:3000
-# Finalizar processo
-kill -9 PID_DO_PROCESSO
-```
-
-### Token expirado
-
-- Faça login novamente para obter um novo token
-- Tokens expiram em 1 hora por padrão
-
-### Banco de dados corrompido
-
-- Delete o arquivo `database/biblioteca.db`
-- Rode o comando `npm run db` para recriar o banco
-
-## 📚 Recursos de Aprendizado
-
-### Documentação
-
-- [Express.js](https://expressjs.com/)
-- [JWT.io](https://jwt.io/)
-- [SQLite Tutorial](https://www.sqlitetutorial.net/)
-- [Swagger/OpenAPI](https://swagger.io/docs/)
-
-### Ferramentas de Teste
-
-- [Postman](https://www.postman.com/)
-- [Insomnia](https://insomnia.rest/)
-- [Jest](https://jestjs.io/) - Para testes automatizados
-- [Newman](https://github.com/postmanlabs/newman) - CLI do Postman
-
-
-### Uso Permitido
-
-- ✅ Uso educacional e acadêmico
-- ✅ Modificação para fins didáticos
-- ✅ Distribuição para alunos
-- ✅ Criação de cursos baseados no projeto
-
-### Uso Restrito
-
-- ❌ Uso comercial direto
-- ❌ Venda do código
-- ❌ Redistribuição sem créditos
+## Considerações finais
+Este repositório é a aplicação de apoio, não necessariamente a suíte de testes em si. Consulte a documentação e os scripts para confirmar como iniciar o sistema e quais funcionalidades estão disponíveis.
 
 ---
 
-## ⭐ Agradecimentos
-
-Desenvolvido com ❤️ para a comunidade de **Quality Assurance**.
-
-**Contribuidores:**
-
-- Fábio Araújo
-    - [Repositório](https://github.com/fabioaraujoqa)
-    - [Linkedin](https://www.linkedin.com/in/fabio10/)
-
----
-
-### 🚀 **Bons Testes!**
-
-*"A qualidade nunca é um acidente; ela é sempre o resultado de um esforço inteligente."* - John Ruskin
+## 🎓 Formação
+Projeto desenvolvido no contexto da formação profissionalizante em **Quality Assurance (QA) pela EBAC — Escola Britânica de Artes Criativas e Tecnologia**.
