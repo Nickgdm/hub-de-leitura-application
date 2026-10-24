@@ -25,7 +25,13 @@ npm install
 ```bash
 npm run
 ```
-4. Execute o script de inicialização definido em `package.json` e siga as configurações documentadas em `README.md` original ou nos arquivos de configuração. Não execute testes contra ambientes que você não controla ou não tem autorização para usar.
+4. Inicialize o banco de dados e execute a aplicação:
+```bash
+npm run db
+npm run setup
+npm start
+```
+O script `db` inicializa o banco; `setup` prepara os dados/configurações iniciais conforme a implementação do projeto. Se necessário, confira os arquivos em `scripts/` e `setup.js` antes de executar. Não execute testes contra ambientes que você não controla ou não tem autorização para usar.
 
 ## Estrutura do projeto
 ```text
